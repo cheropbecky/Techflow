@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechFlow - Your Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script type="module" src="assets/js/app.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col bg-black">
+
+  <main class="flex-grow pt-28 px-4 max-w-5xl mx-auto">
+    <section class="mb-5 text-center">
+      <h1 class="text-3xl font-bold text-cyan-400">Your Shopping Cart</h1>
+      <p class="text-white">Review your items before checkout</p>
+    </section>
+
+    <section id="cart-content" class="space-y-6">
+      <div id="empty-cart-message" class="text-white hidden">
+        <p>Your cart is currently empty.</p>
+      </div>
+      
+      <div class="flex justify-center">
+        <div id="cart-items" class="space-y-4"></div>
+      </div>
+
+      <div class="flex justify-center mt-10">
+        <div id="cart-summary" class="bg-gray-800 p-6 rounded-lg shadow hidden w-full max-w-xs">
+          <div class="flex justify-between text-white mb-4">
+            <span class="text-lg font-semibold">Total:</span>
+            <span id="cart-total" class="text-lg font-bold text-cyan-400">$0</span>
+          </div>
+          <a href="checkout.html" 
+             class="block w-fit mx-auto bg-cyan-400 text-black font-bold py-3 px-6 rounded hover:bg-cyan-500 transition">
+            Proceed to Checkout
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

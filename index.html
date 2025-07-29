@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,21 +8,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script type="module" src="assets/js/app.js" defer></script>
 </head>
-<body class="bg-gray-900 text-white font-sans leading-relaxed">
+<body class="bg-gray-950 text-white min-h-screen">
 
   <main>
 
     <!-- Hero Section -->
-<section class="relative h-[100vh] flex items-center justify-center overflow-hidden mt-28">
-  <img src="assets/images/img1.jpeg" alt="Tech Products" class="absolute w-full h-full object-cover brightness-40">
-  <div class="relative text-center px-4 z-10">
-    <h1 class="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">
-      Welcome to <span class="text-white">TechFlow</span>
-    </h1>
-    <p class="text-lg text-gray-300">Premium gadgets. Seamless experience.</p>
-  </div>
-</section>
-
+    <section class="relative h-[100vh] flex items-center justify-center overflow-hidden mt-28">
+      <img src="assets/images/img1.jpeg" alt="Tech Products" class="absolute w-full h-full object-cover brightness-40">
+      <div class="relative text-center px-4 z-10">
+        <h1 class="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">
+          Welcome to <span class="text-white">TechFlow</span>
+        </h1>
+        <p class="text-lg text-white font-bold">Premium gadgets. Seamless experience.</p>
+      </div>
+    </section>
 
     <!-- Call to Action -->
     <section class="bg-gradient-to-r from-cyan-400 to-blue-600 py-12 px-4 text-center text-white">
@@ -31,7 +30,7 @@
       <a href="signup.html" class="bg-black text-cyan-400 border border-white font-bold px-6 py-2 rounded hover:bg-white hover:text-black transition duration-300">Get Started</a>
     </section>
 
-    <!-- Featured Section -->
+    <!-- Featured Products -->
     <section class="bg-gray-800 py-12 px-4">
       <div class="text-center mb-10">
         <h2 class="text-3xl text-cyan-400 font-bold">Featured Products</h2>
@@ -39,45 +38,41 @@
       </div>
 
       <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        <!-- Product Cards -->
-        <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300 text-center">
-          <img src="assets/images/macbook air.jpeg" alt="MacBook Air" class="h-40 w-full object-contain mb-4">
-          <h3 class="text-lg font-semibold">MacBook Air M2</h3>
-          <p class="text-cyan-400 font-bold">$999</p>
-          <button class="mt-3 bg-cyan-400 text-black font-bold py-2 px-4 rounded hover:bg-cyan-500">Add to Cart</button>
+        
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+          <img src="assets/images/macpro1.jpeg" alt="MacBook Air" class="h-40 w-full object-cover mb-4">
+          <h3 class="text-lg font-bold text-cyan-400">MacBook Air M2</h3>
+          <p class="text-white font-bold">$999</p>
         </div>
 
-        <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300 text-center">
-          <img src="assets/images/image3.jpg" alt="iPhone 15" class="h-40 w-full object-contain mb-4">
-          <h3 class="text-lg font-semibold">iPhone 15 Pro</h3>
-          <p class="text-cyan-400 font-bold">$1,099</p>
-          <button class="mt-3 bg-cyan-400 text-black font-bold py-2 px-4 rounded hover:bg-cyan-500">Add to Cart</button>
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+          <img src="assets/images/iphone2.jpeg" alt="iPhone 15" class="h-40 w-full object-contain mb-4">
+          <h3 class="text-lg font-bold text-cyan-400">iPhone 15 Pro</h3>
+          <p class="text-white font-bold">$1,099</p>
         </div>
 
-        <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300 text-center">
-          <img src="assets/images/ipad_air_4012b0696_2x.png" alt="iPad Pro" class="h-40 w-full object-contain mb-4">
-          <h3 class="text-lg font-semibold">iPad Pro 12.9"</h3>
-          <p class="text-cyan-400 font-bold">$1,199</p>
-          <button class="mt-3 bg-cyan-400 text-black font-bold py-2 px-4 rounded hover:bg-cyan-500">Add to Cart</button>
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+          <img src="assets/images/ipad2.jpeg" alt="iPad Pro" class="h-40 w-full object-contain mb-4">
+          <h3 class="text-lg font-bold text-cyan-400">iPad Pro 12.9"</h3>
+          <p class="text-white font-bold">$1,199</p>
         </div>
 
-        <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300 text-center">
-          <img src="assets/images/airpods.jpeg" alt="AirPods Pro" class="h-40 w-full object-contain mb-4">
-          <h3 class="text-lg font-semibold">AirPods Pro</h3>
-          <p class="text-cyan-400 font-bold">$249</p>
-          <button class="mt-3 bg-cyan-400 text-black font-bold py-2 px-4 rounded hover:bg-cyan-500">Add to Cart</button>
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+          <img src="assets/images/earpod3.jpeg" alt="AirPods Pro" class="h-40 w-full object-contain mb-4">
+          <h3 class="text-lg font-bold text-cyan-400">AirPods Pro</h3>
+          <p class="text-white font-bold">$249</p>
         </div>
 
-        <div class="bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition duration-300 text-center">
-          <img src="assets/images/product_u2__hedpiz396nue_large_2x.png" alt="Apple Watch" class="h-40 w-full object-contain mb-4">
-          <h3 class="text-lg font-semibold">Apple Watch Series 9</h3>
-          <p class="text-cyan-400 font-bold">$399</p>
-          <button class="mt-3 bg-cyan-400 text-black font-bold py-2 px-4 rounded hover:bg-cyan-500">Add to Cart</button>
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+          <img src="assets/images/watch2.jpeg" alt="Apple Watch" class="h-40 w-full object-contain mb-4">
+          <h3 class="text-lg font-bold text-cyan-400">Apple Watch Series 9</h3>
+          <p class="text-white font-bold">$399</p>
         </div>
+
       </div>
     </section>
 
-    <!-- Newsletter -->
+    <!-- Newsletter Section -->
     <section class="bg-gray-900 py-10 px-4 text-center">
       <h2 class="text-3xl font-bold text-white mb-2">Join Our Newsletter</h2>
       <p class="text-gray-400 mb-6">Be the first to know about new arrivals and exclusive offers.</p>
@@ -86,6 +81,7 @@
         <button type="submit" class="bg-cyan-400 text-black font-bold px-6 py-2 rounded hover:bg-cyan-500">Subscribe</button>
       </form>
     </section>
+
   </main>
 
 </body>

@@ -1,6 +1,6 @@
-// modules/products.js
+import { addToCart, updateCartCount } from './cart.js';
 
-// Product templates for meaningful naming
+// Product templates 
 const productNames = {
   Mac: ["MacBook Pro M2", "MacBook Air M2", "Mac Mini", "Mac Studio", "MacBook Pro 14"],
   iMac: ["iMac 24-inch", "iMac M3", "iMac Retina", "iMac Pro", "iMac Slim"],
@@ -53,11 +53,11 @@ Object.entries(categories).forEach(([category, baseName]) => {
   });
 });
 
-// Create Tailwind card
+// Create card element for each product
 function createCard(product) {
   const card = document.createElement('div');
   card.className = `
-    bg-gray-900 rounded-2xl text-yellow-400 shadow-[0_4px_20px_rgba(255,215,0,0.1)]
+    bg-gray-800 rounded-2xl text-yellow-400 shadow-[0_4px_20px_rgba(255,215,0,0.1)]
     overflow-hidden p-4 w-full max-w-xs transform hover:scale-105 transition duration-300
   `;
 
@@ -65,15 +65,22 @@ function createCard(product) {
     <img src="${product.image}" alt="${product.name}" class="w-full h-55 object-cover rounded-md mb-4">
     <h2 class="text-lg font-bold mb-2 text-center text-white">${product.name}</h2>
     <p class="text-center mb-2 text-white">Ksh ${product.price.toLocaleString()}</p>
-    <button class="bg-cyan-500 hover:bg-cyan-700 text-gray-300 px-4 py-2 rounded-full block mx-auto font-semibold">
+    <button class="add-to-cart bg-cyan-500 hover:bg-cyan-700 text-gray-300 px-4 py-2 rounded-full block mx-auto font-semibold">
       Add to Cart
     </button>
   `;
 
+  const button = card.querySelector('.add-to-cart');
+  button.addEventListener('click', () => {
+    addToCart(product);
+    updateCartCount();
+    alert(`${product.name} has been added to your cart.`);
+  });
+
   return card;
 }
 
-// Exported render function
+// Render products to the DOM
 export function renderProducts(filtered = products) {
   const grid = document.getElementById("product-grid");
   if (!grid) return;
@@ -84,16 +91,21 @@ export function renderProducts(filtered = products) {
   });
 }
 
-// Live search
 document.addEventListener("DOMContentLoaded", () => {
   const search = document.getElementById("search-input");
-  if (!search) return;
 
-  search.addEventListener("input", () => {
-    const query = search.value.toLowerCase();
-    const filtered = products.filter(p =>
-      p.name.toLowerCase().includes(query)
-    );
-    renderProducts(filtered);
-  });
+  // Live search
+  if (search) {
+    search.addEventListener("input", () => {
+      const query = search.value.toLowerCase();
+      const filtered = products.filter(p =>
+        p.name.toLowerCase().includes(query)
+      );
+      renderProducts(filtered);
+    });
+  }
+
+  // Render all products and update cart count initially
+  renderProducts();
+  updateCartCount();
 });
