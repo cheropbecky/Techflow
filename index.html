@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TechFlow - Premium Tech Gadgets</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script type="module" src="assets/js/app.js" defer></script>
 </head>
-<body class="bg-gray-950 text-white min-h-screen">
 
+<body class="bg-gray-950 text-white min-h-screen">
   <main>
 
     <!-- Hero Section -->
-    <section class="relative h-[100vh] flex items-center justify-center overflow-hidden mt-28">
+    <section class="relative h-[100vh] flex items-center justify-center overflow-hidden mt-28 js-animate">
       <img src="assets/images/img1.jpeg" alt="Tech Products" class="absolute w-full h-full object-cover brightness-40">
       <div class="relative text-center px-4 z-10">
         <h1 class="text-4xl md:text-5xl font-bold text-cyan-400 mb-2">
@@ -24,56 +25,54 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="bg-gradient-to-r from-cyan-400 to-blue-600 py-12 px-4 text-center text-white">
+    <section class="bg-gradient-to-r from-cyan-400 to-blue-600 py-12 px-4 text-center text-white js-animate">
       <h2 class="text-3xl font-semibold mb-4">Discover the Future of Tech</h2>
       <p class="mb-6 text-lg">Join TechFlow today and explore premium gadgets at unbeatable prices.</p>
       <a href="signup.html" class="bg-black text-cyan-400 border border-white font-bold px-6 py-2 rounded hover:bg-white hover:text-black transition duration-300">Get Started</a>
     </section>
 
     <!-- Featured Products -->
-    <section class="bg-gray-800 py-12 px-4">
+    <section class="bg-gray-800 py-12 px-4 js-animate">
       <div class="text-center mb-10">
         <h2 class="text-3xl text-cyan-400 font-bold">Featured Products</h2>
         <p class="text-gray-300 mt-2">Explore our top picks just for you</p>
       </div>
 
       <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        
-        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center js-animate">
           <img src="assets/images/macpro1.jpeg" alt="MacBook Air" class="h-40 w-full object-cover mb-4">
           <h3 class="text-lg font-bold text-cyan-400">MacBook Air M2</h3>
           <p class="text-white font-bold">$999</p>
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center js-animate">
           <img src="assets/images/iphone2.jpeg" alt="iPhone 15" class="h-40 w-full object-contain mb-4">
           <h3 class="text-lg font-bold text-cyan-400">iPhone 15 Pro</h3>
           <p class="text-white font-bold">$1,099</p>
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center js-animate">
           <img src="assets/images/ipad2.jpeg" alt="iPad Pro" class="h-40 w-full object-contain mb-4">
           <h3 class="text-lg font-bold text-cyan-400">iPad Pro 12.9"</h3>
           <p class="text-white font-bold">$1,199</p>
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center js-animate">
           <img src="assets/images/earpod3.jpeg" alt="AirPods Pro" class="h-40 w-full object-contain mb-4">
           <h3 class="text-lg font-bold text-cyan-400">AirPods Pro</h3>
           <p class="text-white font-bold">$249</p>
         </div>
 
-        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center">
+        <div class="bg-gray-900 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 text-center js-animate">
           <img src="assets/images/watch2.jpeg" alt="Apple Watch" class="h-40 w-full object-contain mb-4">
           <h3 class="text-lg font-bold text-cyan-400">Apple Watch Series 9</h3>
           <p class="text-white font-bold">$399</p>
         </div>
-
       </div>
     </section>
 
     <!-- Newsletter Section -->
-    <section class="bg-gray-900 py-10 px-4 text-center">
+    <section class="bg-gray-900 py-10 px-4 text-center js-animate">
       <h2 class="text-3xl font-bold text-white mb-2">Join Our Newsletter</h2>
       <p class="text-gray-400 mb-6">Be the first to know about new arrivals and exclusive offers.</p>
       <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -83,6 +82,5 @@
     </section>
 
   </main>
-
 </body>
 </html>

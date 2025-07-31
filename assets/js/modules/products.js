@@ -60,6 +60,7 @@ function createCard(product) {
     bg-gray-800 rounded-2xl text-yellow-400 shadow-[0_4px_20px_rgba(255,215,0,0.1)]
     overflow-hidden p-4 w-full max-w-xs transform hover:scale-105 transition duration-300
   `;
+  card.classList.add('animate-slide-up');
 
   card.innerHTML = `
     <img src="${product.image}" alt="${product.name}" class="w-full h-55 object-cover rounded-md mb-4">

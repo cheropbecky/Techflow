@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - TechFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    @keyframes fade-in {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slide-up {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1s ease-out forwards;
+    }
+
+    .animate-slide-up {
+      animation: slide-up 1s ease-out forwards;
+    }
+
+    .delay-150 {
+      animation-delay: 0.15s;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+  <main class="flex-grow flex items-center justify-center p-4 mt-20">
+    <div class="bg-gray-800 p-6 rounded-lg shadow max-w-md w-full animate-slide-up delay-150">
+      <h2 class="text-xl font-bold text-center mb-4 text-cyan-400 animate-fade-in">Create an Account</h2>
+      <form id="signup-form" class="space-y-4">
+        <input type="text" name="fullName" placeholder="Full Name" id="name" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150" />
+        <input type="email" name="email" placeholder="Email" id="email" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150" />
+        <input type="tel" name="phone" placeholder="Phone (2547xxxxxxx)" id="phone" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150" />
+        <textarea name="address" id="address" placeholder="Shipping Address" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150"></textarea>
+        <button type="submit" class="w-full bg-cyan-500 py-2 rounded hover:bg-cyan-600 animate-slide-up delay-150">Sign Up</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    // Get the redirect path from the URL
+    const params = new URLSearchParams(window.location.search);
+    const redirectTo = params.get('redirect') || 'index.html';
+
+    const form = document.getElementById('signup-form');
+
+    // Prefill form if user already exists
+    const existingUser = JSON.parse(localStorage.getItem('techflowUser'));
+    if (existingUser) {
+      document.getElementById('name').value = existingUser.name || '';
+      document.getElementById('email').value = existingUser.email || '';
+      document.getElementById('phone').value = existingUser.phone || '';
+      document.getElementById('address').value = existingUser.address || '';
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const user = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        address: document.getElementById('address').value.trim(), 
+      };
+
+      // Validate phone number
+      if (!/^254\d{9}$/.test(user.phone)) {
+        alert("Please enter a valid Kenyan phone number starting with 254");
+        return;
+      }
+
+      localStorage.setItem("techflowUser", JSON.stringify(user));
+      alert("Account created successfully!");
+      // Redirect to wherever they came from (home, checkout, etc.)
+      window.location.href = redirectTo;
+    });
+  </script>
+
+  <script type="module" src="./assets/js/signup.js"></script>
+  <script type="module" src="assets/js/modules/layout.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

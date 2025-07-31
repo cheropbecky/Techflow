@@ -2,6 +2,27 @@
 export function injectLayout() {
   document.body.classList.add("bg-gray-950", "font-sans", "relative");
 
+  //animation styles
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes slide-up {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-up {
+      animation: slide-up 0.6s ease-out forwards;
+    }
+  `;
+  document.head.appendChild(style);
+
+
   // Background
   const backgroundGlow = `
     <div class="fixed inset-0 -z-10 top-0 left-0 w-full h-full overflow-hidden">
