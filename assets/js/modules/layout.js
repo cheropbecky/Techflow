@@ -54,7 +54,6 @@ export function injectLayout() {
       <li><a class="hover:text-cyan-400 transition block py-2" href="about.html">About Us</a></li>
       <li><a class="hover:text-cyan-400 transition block py-2" href="products.html">Our Products</a></li>
       <li><a class="hover:text-cyan-400 transition block py-2" href="signup.html">Sign Up</a></li>
-      <li><a class="hover:text-cyan-400 transition block py-2" href="contact.html">Contact Us</a></li>
       <li>
         <a class="hover:text-cyan-400 transition block py-2 relative" href="cart.html">
           Cart 

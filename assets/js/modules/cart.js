@@ -139,3 +139,5 @@ export function addToCart(product) {
   saveCartItems(cart);
   updateCartCount();
 }
+
+

@@ -3,16 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout - TechFlow</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script type="module" src="app.js" defer></script>
+  <title>Checkout | TechFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-  <main class="pt-24 max-w-4xl mx-auto px-4">
-    <h1 class="text-3xl font-bold text-white mb-6 animate-slide-up">Checkout</h1>
-    <div id="checkout-summary" class="bg-gray-800 p-6 rounded-lg shadow-lg text-gray-200 animate-slide-up">
-      <p>Loading your cart...</p>
+<body class="bg-gray-950 text-white font-sans">
+  <main class="pt-40 px-6 md:px-20 pb-20 animate-slide-up">
+    <h1 class="text-5xl md:text-4xl font-extrabold text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-12">
+      Techflow Checkout
+    </h1>
+
+    <!-- Progress Bar -->
+    <div class="flex justify-center gap-4 mb-12 text-sm font-medium">
+      <div class="text-cyan-400">1. Shipping Info</div>
+      <div class="text-white">›</div>
+      <div class="text-white">2. Payment</div>
+      <div class="text-white">›</div>
+      <div class="text-white">3. Confirm</div>
     </div>
-  </main>
+
+    <!-- Checkout Form Container -->
+    <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl p-8">
+      <form id="checkout-form" class="grid md:grid-cols-2 gap-6">
+        
+        <div>
+          <h2 class="text-2xl font-bold text-cyan-400 mb-4">Shipping Information</h2>
+          <div id="shipping-info" class="space-y-4"></div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-cyan-400 mb-4">Shipping Method</h2>
+          <div class="space-y-4 mb-8">
+            <label class="flex items-center gap-3">
+              <input type="radio" name="shipping" checked class="accent-cyan-500">
+              <span>Standard (3–5 days) — Free</span>
+            </label>
+            <label class="flex items-center gap-3">
+              <input type="radio" name="shipping" class="accent-cyan-500">
+              <span>Express (1–2 days) — $9.99</span>
+            </label>
+            <label class="flex items-center gap-3">
+              <input type="radio" name="shipping" class="accent-cyan-500">
+              <span>Overnight — $19.99</span>
+            </label>
+          </div>
+
+          <h2 class="text-2xl font-bold text-cyan-400 mb-4">Order Summary</h2>
+          <div class="space-y-2 text-sm text-gray-300 mb-6">
+            <div class="flex justify-between">
+              <span>Subtotal</span><span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Shipping</span><span id="cart-shipping-cost">$0.00</span>
+            </div>
+            <div class="flex justify-between font-semibold text-white">
+              <span>Total</span><span id="cart-summary-total">$0.00</span>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-3 rounded hover:opacity-90 transition-all duration-300">
+            Continue to Payment
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Payment Modal -->
+<div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50 px-4">
+  <div class="bg-white p-6 rounded-xl w-full max-w-md shadow-lg text-gray-900 space-y-4">
+
+    <h2 class="text-xl font-bold text-center">Choose Your Payment Method</h2>
+
+    <!-- Payment Options -->
+    <div class="flex justify-center gap-4">
+      <button class="payment-option" data-method="mpesa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/M-PESA_LOGO-01.svg/512px-M-PESA_LOGO-01.svg.png" alt="M-Pesa" class="h-10" />
+      </button>
+      <button class="payment-option" data-method="visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-10" />
+      </button>
+      <button class="payment-option" data-method="paypal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-10" />
+      </button>
+    </div>
+
+    <!-- Dynamic Form Container -->
+    <div id="payment-form-area" class="space-y-3"></div>
+
+    <button id="confirm-payment" class="bg-cyan-600 hover:bg-cyan-700 text-white py-2 px-4 rounded w-full">Pay Now</button>
+    <button id="close-modal" class="text-cyan-600 hover:underline w-full">Cancel</button>
+
+  </div>
+</div>
+</main>
+  <script type="module">
+    import { injectLayout } from './assets/js/modules/layout.js';
+    import {
+      renderCheckoutUI,
+      updateOrderSummary,
+      setupShippingChangeEvents,
+      setupModalEvents,
+      handleCheckoutSubmit
+    } from './assets/js/modules/checkout.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      injectLayout();
+      renderCheckoutUI();
+      updateOrderSummary();
+      setupShippingChangeEvents();
+      setupModalEvents();
+
+      const form = document.getElementById("checkout-form");
+      if (form) {
+        form.addEventListener("submit", handleCheckoutSubmit);
+      }
+    });
+  </script>
+
 </body>
 </html>
