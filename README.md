@@ -22,13 +22,12 @@
 - CSS3
 - Tailwind CSS
 - JavaScript (ES6)
-- Web APIs (localStorage)
 
 ##  How to Run
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/your-username/techflow.git
+git clone https://github.com/cheropbecky/techflow.git
 Open the App
 Navigate to the project folder.
 Open index.html in your browser.
