@@ -13,15 +13,7 @@
       Techflow Checkout
     </h1>
 
-    <!-- Progress Bar -->
-    <div class="flex justify-center gap-4 mb-12 text-sm font-medium">
-      <div class="text-cyan-400">1. Shipping Info</div>
-      <div class="text-white">›</div>
-      <div class="text-white">2. Payment</div>
-      <div class="text-white">›</div>
-      <div class="text-white">3. Confirm</div>
-    </div>
-
+  
     <!-- Checkout Form Container -->
     <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl p-8">
       <form id="checkout-form" class="grid md:grid-cols-2 gap-6">
@@ -74,17 +66,26 @@
     <h2 class="text-xl font-bold text-center">Choose Your Payment Method</h2>
 
     <!-- Payment Options -->
-    <div class="flex justify-center gap-4">
-      <button class="payment-option" data-method="mpesa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/M-PESA_LOGO-01.svg/512px-M-PESA_LOGO-01.svg.png" alt="M-Pesa" class="h-10" />
-      </button>
-      <button class="payment-option" data-method="visa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-10" />
-      </button>
-      <button class="payment-option" data-method="paypal">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-10" />
-      </button>
-    </div>
+    <div class="flex justify-around gap-4">
+  <!-- M-Pesa Button -->
+  <button class="payment-option flex flex-col items-center bg-gray-800 hover:bg-gray-700 transition rounded-xl p-3 w-24 shadow-md">
+    <img src="https://www.pngitem.com/pimgs/m/386-3865195_m-pesa-logo-png-m-pesa-transparent-png.png" alt="M-Pesa" class="h-10 mb-2" />
+    <span class="text-gray-300 text-xs">M-Pesa</span>
+  </button>
+
+  <!-- Visa Button -->
+  <button class="payment-option flex flex-col items-center bg-gray-800 hover:bg-gray-700 transition rounded-xl p-3 w-24 shadow-md">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-10 mb-2" />
+    <span class="text-gray-300 text-xs">Visa</span>
+  </button>
+
+  <!-- PayPal Button -->
+  <button class="payment-option flex flex-col items-center bg-gray-800 hover:bg-gray-700 transition rounded-xl p-3 w-24 shadow-md">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-10 mb-2" />
+    <span class="text-gray-300 text-xs">PayPal</span>
+  </button>
+</div>
+
 
     <!-- Dynamic Form Container -->
     <div id="payment-form-area" class="space-y-3"></div>

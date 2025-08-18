@@ -6,85 +6,124 @@
   <title>Sign Up - TechFlow</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    @keyframes fade-in {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slide-up {
-      0% { opacity: 0; transform: translateY(50px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .animate-fade-in {
-      animation: fade-in 1s ease-out forwards;
-    }
-
-    .animate-slide-up {
-      animation: slide-up 1s ease-out forwards;
-    }
-
-    .delay-150 {
-      animation-delay: 0.15s;
-    }
-  </style>
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
   <main class="flex-grow flex items-center justify-center p-4 mt-20">
     <div class="bg-gray-800 p-6 rounded-lg shadow max-w-md w-full animate-slide-up delay-150">
       <h2 class="text-xl font-bold text-center mb-4 text-cyan-400 animate-fade-in">Create an Account</h2>
-      <form id="signup-form" class="space-y-4">
-        <input type="text" name="fullName" placeholder="Full Name" id="name" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150" />
-        <input type="email" name="email" placeholder="Email" id="email" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150" />
-        <input type="tel" name="phone" placeholder="Phone (2547xxxxxxx)" id="phone" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150" />
-        <textarea name="address" id="address" placeholder="Shipping Address" required class="w-full px-4 py-2 bg-gray-700 rounded animate-fade-in delay-150"></textarea>
-        <button type="submit" class="w-full bg-cyan-500 py-2 rounded hover:bg-cyan-600 animate-slide-up delay-150">Sign Up</button>
+
+      <form id="signup-form" class="space-y-5">
+
+        <!-- Full Name Field -->
+        <div class="relative">
+          <input type="text" id="name" name="fullName" placeholder="Full Name" required
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none" />
+          <i class="fa-solid fa-circle-check absolute right-4 top-3 text-green-500 hidden" id="nameCheck"></i>
+          <p class="text-red-400 text-sm mt-1 hidden" id="nameError">Enter at least two names</p>
+        </div>
+
+        <!-- Username -->
+        <div class="relative">
+          <input type="text" id="username" name="username" placeholder="Username" required
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none" />
+          <i class="fa-solid fa-circle-check absolute right-4 top-3 text-green-500 hidden" id="usernameCheck"></i>
+          <p class="text-red-400 text-sm mt-1 hidden" id="usernameError">Username is required</p>
+        </div>
+
+        <!-- Email -->
+        <div class="relative">
+          <input type="email" id="email" name="email" placeholder="Email" required
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none" />
+          <i class="fa-solid fa-circle-check absolute right-4 top-3 text-green-500 hidden" id="emailCheck"></i>
+          <p class="text-red-400 text-sm mt-1 hidden" id="emailError">Please enter a valid email</p>
+        </div>
+
+        <!-- Phone -->
+        <div class="relative">
+          <input type="tel" id="phone" name="phone" placeholder="Phone (2547xxxxxxxx)" required
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none" />
+          <i class="fa-solid fa-circle-check absolute right-4 top-3 text-green-500 hidden" id="phoneCheck"></i>
+          <p class="text-red-400 text-sm mt-1 hidden" id="phoneError">Phone must start with 254 and be 12 digits</p>
+        </div>
+
+        <!-- Password -->
+        <div class="relative mb-4">
+          <input type="password" id="password" name="password" placeholder="Password" required
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded focus:outline-none" />
+          <button type="button" onclick="togglePassword('password')"
+            class="absolute right-4 top-2 text-gray-400"><i class="fas fa-eye"></i></button>
+          <p class="text-sm mt-1 text-gray-400" id="passwordStrength">Password strength: </p>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="relative mb-2">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required
+            class="w-full px-4 py-2 bg-gray-700 text-white rounded border-gray-300 focus:outline-none " />
+          <button type="button" onclick="togglePassword('confirmPassword')"
+            class="absolute right-4 top-2 text-gray-400"><i class="fas fa-eye"></i></button>
+        </div>
+        <p class="text-sm mt-1 text-gray-400" id="passwordMatch"></p>
+
+
+        <!-- Terms and Newsletter -->
+        <div class="flex items-start gap-2 text-sm">
+          <input type="checkbox" id="terms" required />
+          <label for="terms">
+            I agree to the <a href="#" class="text-cyan-400 underline">Terms of Service</a> and
+            <a href="#" class="text-cyan-400 underline">Privacy Policy</a>.
+          </label>
+        </div>
+        <!-- Sign Up Button -->
+        <button id="signupBtn"   type="submit"
+          class="w-full bg-cyan-500 py-2 rounded hover:bg-cyan-600 transition duration-200">
+          Sign Up
+        </button>
+
+        <!-- OR Divider -->
+        <div class="flex items-center justify-between my-4">
+          <hr class="w-1/3 border-gray-600" />
+          <span class="text-gray-400 text-sm">or sign up with</span>
+          <hr class="w-1/3 border-gray-600" />
+        </div>
+
+        <!-- Social Signup Buttons -->
+       <div class="flex flex-col gap-4">
+        <!-- Google Button -->
+        <button type="button"
+          class="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-300 transition">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
+              alt="Google" class="w-5 h-5 mr-2">
+          <span>Sign up with Google</span>
+        </button>
+
+        <!-- Facebook Button -->
+        <button type="button"
+          class="w-full flex items-center justify-center bg-[#1877F2] text-white py-2 rounded-lg hover:bg-[#166fe2] transition">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" 
+              alt="Facebook" class="w-5 h-5 mr-2">
+          <span>Sign up with Facebook</span>
+        </button>
+
+        <!-- Apple Button -->
+        <button type="button"
+          class="w-full flex items-center justify-center bg-white text-black py-2 rounded-lg hover:bg-gray-300 transition">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" 
+              alt="Apple" class="w-5 h-5 mr-2">
+          <span>Sign up with Apple</span>
+        </button>
+      </div>
+
+
+        <!-- Already have an account? -->
+        <p class="text-center text-sm mt-2">
+          Already have an account?
+          <a href="login.html" class="text-cyan-400 hover:underline">Login</a>
+        </p>
       </form>
     </div>
   </main>
 
-  <script>
-    // Get the redirect path from the URL
-    const params = new URLSearchParams(window.location.search);
-    const redirectTo = params.get('redirect') || 'index.html';
-
-    const form = document.getElementById('signup-form');
-
-    // Prefill form if user already exists
-    const existingUser = JSON.parse(localStorage.getItem('techflowUser'));
-    if (existingUser) {
-      document.getElementById('name').value = existingUser.name || '';
-      document.getElementById('email').value = existingUser.email || '';
-      document.getElementById('phone').value = existingUser.phone || '';
-      document.getElementById('address').value = existingUser.address || '';
-    }
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const user = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
-        address: document.getElementById('address').value.trim(), 
-      };
-
-      // Validate phone number
-      if (!/^254\d{9}$/.test(user.phone)) {
-        alert("Please enter a valid Kenyan phone number starting with 254");
-        return;
-      }
-
-      localStorage.setItem("techflowUser", JSON.stringify(user));
-      alert("Account created successfully!");
-      // Redirect to wherever they came from (home, checkout, etc.)
-      window.location.href = redirectTo;
-    });
-  </script>
-
-  <script type="module" src="./assets/js/signup.js"></script>
+  <script type="module" src="./assets/js/modules/signup.js"></script>
   <script type="module" src="assets/js/modules/layout.js"></script>
   <script type="module" src="assets/js/app.js"></script>
 </body>

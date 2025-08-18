@@ -90,8 +90,12 @@ footer.innerHTML = `
         <p class="text-sm">support@techflow.com</p>
         <div class="flex gap-4 mt-3 text-white text-lg">
           <a href="#" class="hover:text-cyan-400"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="hover:text-cyan-400"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" class="hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+
+          <a href="https://twitter.com/Beki94485333612" class="hover:text-cyan-400" target="_blank"><i class="fab fa-twitter"></i></a>
+
+          <a href="https://instagram.com/beck.y_6705" class="hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+
+          <a href="https://www.linkedin.com/in/becky-cherop-379525374/" class="hover:text-cyan-400" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
