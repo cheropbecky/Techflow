@@ -4,19 +4,19 @@
 
 🔗 **Live Demo:** [TechFlow Live Site](https://cheropbecky.github.io/techflow/)  
 
-## ✨ Features
+## Features
 
-- 🖥️ Multi-page layout: Home, About, Products, Cart, Checkout, Contact, and Signup pages
-- 🛒 Add-to-cart, quantity adjustment, and cart persistence via localStorage
-- 📦 Dynamic checkout system:
+- Multi-page layout: Home, About, Products, Cart, Checkout, Contact, and Signup pages
+- Add-to-cart, quantity adjustment, and cart persistence via localStorage
+- Dynamic checkout system:
   - Shipping form with validation
   - Multiple shipping options
   - Payment modal with M-Pesa, Visa, and PayPal mock validation
-- 💰 Total order summary and payment feedback
-- 🎨 Tailwind CSS for clean and responsive design
-- 📱 Mobile-first layout and full responsiveness
+- Total order summary and payment feedback
+- Tailwind CSS for clean and responsive design
+- Mobile-first layout and full responsiveness
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
@@ -38,13 +38,13 @@ Go to Settings > Pages
 Set branch to main and folder to /root
 Wait for deployment and use the provided links
 
-🚧 Future Improvements
+Future Improvements
 Backend integration (Node.js + MongoDB or Firebase)
 Real payment APIs (M-Pesa, Stripe, etc.)
 User login and signup functionality
 Admin dashboard for managing orders and inventory
-👩‍💻 Author
+Author
 Created by Becky Kiptanui
-📧 Email: cheropbecky348@gmail.com
-📄 License
+Email: cheropbecky348@gmail.com
+License
 This project is open for personal and educational use. Feel free to clone, customize, and improve upon it!
